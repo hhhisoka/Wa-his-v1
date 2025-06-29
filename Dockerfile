@@ -1,6 +1,6 @@
 FROM node:lts-buster
 RUN git clone https://github.com/hhhisoka/Wa-his-v1
-WORKDIR /root/
+WORKDIR /hhhisoka
 RUN npm install && npm install -g pm2 || yarn install --network-concurrency 1
 COPY . .
 EXPOSE 9090
