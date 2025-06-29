@@ -92,16 +92,23 @@ console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
 console.log('LITE-MD CONNECTED TO WHATSAPP ENJOY ✅')
 
 let up = `*╭──────────────●●►*
-> *➺ Wa-his-v1 ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ your name ✅*
 
-> *❁ᴊᴏɪɴ ᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ ᴄʜᴀɴɴᴇʟ ғᴏʀ ᴜᴘᴅᴀᴛᴇs 
+> ✅ *Wa-his-v1 connected successfully!*
+> 📜 *Type *.menu* to see all commands.*
+> 👤 *Created by:* _hhhisoka_
 
-*https://whatsapp.com/channel/0029Vb5u3VX0lwgllCdVTF0G*
+> 🔔 *Join our WhatsApp Channel for updates:*
+> https://whatsapp.com/channel/0029Vb5u3VX0lwgllCdVTF0G
 
-*YOUR BOT ACTIVE NOW ENJOY♥️🪄*\n\n*PREFIX: ${prefix}*
+> 🤖 *Your bot is now active. Enjoy the magic! ♥️🪄*
+
+*🔹 Prefix:* ${prefix}
 
 *╰──────────────●●►*`;
-conn.sendMessage(conn.user.id, { image: { url: config.MENU_IMG }, caption: up })
+conn.sendMessage(conn.user.id, {
+  image: { url: config.MENU_IMG },
+  caption: up
+})
 
 }
 })
