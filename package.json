@@ -4,9 +4,9 @@
   "description": "A WhatsApp Bot Created By hhhisoka",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Botname-MD",
-    "stop": "pm2 stop Botname-MD",
-    "restart": "pm2 restart Botne-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name Wa-his-v1",
+    "stop": "pm2 stop Wa-his-v1",
+    "restart": "pm2 restart Wa-his-v1"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
