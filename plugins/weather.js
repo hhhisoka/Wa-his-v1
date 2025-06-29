@@ -19,18 +19,21 @@ async (conn, mek, m, { from, q, reply }) => {
         const response = await axios.get(url);
         const data = response.data;
         const weather = `
-🌍 *Weather Information for ${data.name}, ${data.sys.country}* 🌍
-🌡️ *Temperature*: ${data.main.temp}°C
-🌡️ *Feels Like*: ${data.main.feels_like}°C
-🌡️ *Min Temp*: ${data.main.temp_min}°C
-🌡️ *Max Temp*: ${data.main.temp_max}°C
-💧 *Humidity*: ${data.main.humidity}%
-☁️ *Weather*: ${data.weather[0].main}
-🌫️ *Description*: ${data.weather[0].description}
-💨 *Wind Speed*: ${data.wind.speed} m/s
-🔽 *Pressure*: ${data.main.pressure} hPa
+╔═══════════════════════╗
+🌍 *Weather in ${data.name}, ${data.sys.country}* 🌍
+╚═══════════════════════╝
 
-*POWERED BY Your Botname*
+🌡️ *Température Actuelle* : ${data.main.temp}°C  
+🥵 *Ressenti*             : ${data.main.feels_like}°C  
+📉 *Temp. Min*            : ${data.main.temp_min}°C  
+📈 *Temp. Max*            : ${data.main.temp_max}°C  
+💧 *Humidité*             : ${data.main.humidity}%  
+☁️ *Conditions*           : ${data.weather[0].main}  
+🌫️ *Description*          : ${data.weather[0].description}  
+💨 *Vent*                 : ${data.wind.speed} m/s  
+🔽 *Pression*             : ${data.main.pressure} hPa  
+
+> 🔮 *Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 × hhhisoka*
 `;
         return reply(weather);
     } catch (e) {
