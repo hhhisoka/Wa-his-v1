@@ -1,15 +1,14 @@
 /**
-
-
- Copyright (C) 2025.
- Licensed under the  GPL-3.0 License;
- You may not sell this script.
- It is supplied in the hope that it may be useful.
- * @project_name : Free Bot script
- * @author : Malvin King <https://github.com/kingmalvn>
- * @description : A Multi-functional whatsapp bot script.
- * @version 3.0.0
- **/
+ * Copyright (C) 2025 hhhisoka
+ *
+ * This code is licensed under the GPL-3.0 LICENSE 
+ * See the LICENSE file in the repository root for full license text.
+ *
+ * Wa-his-v1 WhatsApp Bot
+ * Version: 1.0.0
+ * Created by hhhisoka
+ * GitHub: https://github.com/hhhisoka/Wa-his-v1
+ */
 
 
 const { fetchJson } = require("../lib/functions");
@@ -52,17 +51,17 @@ cmd({
 
     const { desc, thumb, video_sd, video_hd } = data.result;
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
-      + `┃▸ *Description:* ${desc || "No description"}\n`
-      + `╰═════════════════❐\n\n`
-      + `📹 *Download Options:*\n`
-      + `1️⃣  *SD Quality*\n`
-      + `2️⃣  *HD Quality*\n`
-      + `🎵 *Audio Options:*\n`
-      + `3️⃣  *Audio*\n`
-      + `4️⃣  *Document*\n`
-      + `5️⃣  *Voice*\n\n`
-      + `📌 *Reply with the number to download your choice.*`;
+    const caption = `╭═══════🎭〔 *『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 𝙋𝙍𝙀𝙎𝙀𝙉𝙏𝙎* 〕🎭═══════╮\n` +
+  `┃ ✦ *Description:* ${desc || "Such silence... intriguing."}\n` +
+  `╰════════════════════════════════╯\n\n` +
+  `🎥 *Choose your poison...*\n\n` +
+  `1️⃣  *SD Quality* — Smooth & simple\n` +
+  `2️⃣  *HD Quality* — Sharp like my cards\n\n` +
+  `🎧 *Audio Formats for twisted tastes:*\n` +
+  `3️⃣  *Audio* — For the rhythm inside\n` +
+  `4️⃣  *Document* — Hidden in plain sight\n` +
+  `5️⃣  *Voice* — Whispered into madness\n\n` +
+  `🃏 *Reply with a number... if you dare.*`;
 
     const sentMsg = await conn.sendMessage(from, {
       image: { url: thumb },
@@ -174,11 +173,12 @@ cmd({
       react: { text: "⬆️", key: m.key }
     });
 
-    const caption = `╭════ 〔 *Your Botname* 〕════❐\n`
-      + `┃▢ *ғɪʟᴇ ɴᴀᴍᴇ:* ${file_name}\n`
-      + `┃▢ *ғɪʟᴇ ᴛʏᴘᴇ:* ${mime_type}\n`
-      + `╰═════════════════❐\n\n`
-      + `> *Powered by Your Botname🎐*`;
+    const caption = `╭══════ 🎩〔 *『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 𝙁𝙄𝙇𝙀 𝘿𝙀𝙇𝙄𝙑𝙀𝙍𝙔* 〕🎩 ══════╮\n` +
+  `┃ ✦ *File Name:* ${file_name}\n` +
+  `┃ ✦ *File Type:* ${mime_type}\n` +
+  `╰════════════════════════════════╯\n\n` +
+  `> _"Curious, aren't you? Let's see what this little file hides..."_ 🃏\n` +
+  `> *Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 🎐*`;
 
     await conn.sendMessage(from, {
       document: { url: dl_link },
@@ -224,14 +224,15 @@ cmd({
     const app = data.datalist.list[0];
     const appSize = (app.size / 1048576).toFixed(2); // Convert bytes to MB
 
-    const caption = `╭═══ 〔 *Your Botname 𝐀𝐏𝐊* 〕═══❐
-┃ 🏷️ *ɴᴀᴍᴇ:* ${app.name}
-┃ 📦 *sɪᴢᴇ:* ${appSize} MB
-┃ 📮 *ᴘᴀᴄᴋᴀɢᴇ:* ${app.package}
-┃ 📅 *ᴜᴘᴅᴀᴛᴇᴅ ᴏɴ:* ${app.updated}
-┃ 👨🏻‍💻 *ᴅᴇᴠᴇʟᴏᴘᴇʀ:* ${app.developer.name}
-╰══════════════════❐
-> *Powered by your botname🎐*`;
+    const caption = `╭══════ 🎭〔 *『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 𝐀𝐏𝐊 𝐏𝐀𝐂𝐊𝐀𝐆𝐄* 〕🎭 ══════╮\n`
+      + `┃ 🏷️ *Name:* ${app.name}\n`
+      + `┃ 📦 *Size:* ${appSize} MB\n`
+      + `┃ 🧩 *Package:* ${app.package}\n`
+      + `┃ 📅 *Updated On:* ${app.updated}\n`
+      + `┃ 🧑‍💻 *Developer:* ${app.developer.name}\n`
+      + `╰════════════════════════════════╯\n\n`
+      + `> _"An app... or maybe a trick in disguise?"_ 🃏\n`
+      + `> *Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 🎐*`;
 
     await conn.sendMessage(from, { react: { text: "⬆️", key: m.key } });
 
@@ -282,7 +283,7 @@ cmd({
         document: { url: downloadUrl },
         mimetype: response.data.result.mimetype,
         fileName: response.data.result.fileName,
-        caption: "> *Powered by your Botname 🎐*"
+        caption: "> *Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 🎐*"
       }, { quoted: m });
 
       await conn.sendMessage(from, { react: { text: "✅", key: m.key } });

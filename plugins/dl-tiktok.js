@@ -1,16 +1,15 @@
 
 /**
-
-
- Copyright (C) 2025.
- Licensed under the  GPL-3.0 License;
- You may not sell this script.
- It is supplied in the hope that it may be useful.
- * @project_name : Free Bot script
- * @author : Malvin King <https://github.com/kingmalvn>
- * @description : A Multi-functional whatsapp bot script.
- * @version 3.0.0
- **/
+ * Copyright (C) 2025 hhhisoka
+ *
+ * This code is licensed under the GPL-3.0 LICENSE 
+ * See the LICENSE file in the repository root for full license text.
+ *
+ * Wa-his-v1 WhatsApp Bot
+ * Version: 1.0.0
+ * Created by hhhisoka
+ * GitHub: https://github.com/hhhisoka/Wa-his-v1
+ */
 
 const { cmd } = require('../command');
 const axios = require('axios');
@@ -37,9 +36,10 @@ async (conn, mek, m, { from, args, q, reply }) => {
         const { title, like, comment, share, author, meta } = data.data;
         const videoUrl = meta.media.find(v => v.type === "video").org;
         
-        const caption = `*❒ Your Botname VⵊDEO DOWNLOADER ❒*\n\n` +
-                        `👤 *User:* ${author.nickname}\n` +
-                        `♥️ *Likes:* ${like}\n💬 *Comments:* ${comment}\n♻️ *Shares:* ${share}`;
+        const caption = `*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙑𝙄𝘿𝙀𝙊 𝙎𝙉𝘼𝙏𝘾𝙃𝙀𝙍 — 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 🎭*\n\n` +
+    `🃏 *Target:* ${author.nickname}\n` +
+    `♥️ *Likes:* ${like}\n💬 *Comments:* ${comment}\n🔁 *Shares:* ${share}\n\n` +
+    `_“Popularity is such a... fragile illusion. Let’s break it, shall we?” – 𝙃𝙞𝙨𝙤𝙠𝙖_`;
         
         await conn.sendMessage(from, {
             video: { url: videoUrl },

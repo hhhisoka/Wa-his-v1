@@ -41,26 +41,27 @@ cmd({
         };
 
         // Create the settings message with the updated format
-        let madeSetting = `╭───⚙️ *${config.BOT_NAME} Settings* ⚙️───╮
+        let madeSetting = `
+╭─❖ 『 ⚙️ 𝗦𝗘𝗧𝗧𝗜𝗡𝗚𝗦 𝗢𝗙 𝗕𝗢𝗧 』 ❖─╮
 │
-│ 🟢 *➤ Auto Read Status*: ${statusIcon(config.AUTO_READ_STATUS)}
-│ ⚙️ *➤ Mode*: *${config.MODE}*
-│ 🎙️ *➤ Auto Voice*: ${statusIcon(config.AUTO_VOICE)}
-│ 🖼️ *➤ Auto Sticker*: ${statusIcon(config.AUTO_STICKER)}
-│ 💬 *➤ Auto Reply*: ${statusIcon(config.AUTO_REPLY)}
-│ ✉️ *➤ Alive Message*: *${config.ALIVE_MSG}*
-│ 🔗 *➤ Anti Link*: ${statusIcon(config.ANTI_LINK)}
-│ 🚫 *➤ Anti Bad*: ${statusIcon(config.ANTI_BAD)}
-│ ⌨️ *➤ Prefix*: *[ ${config.PREFIX} ]*
-│ 🎥 *➤ Fake Recording*: ${statusIcon(config.FAKE_RECORDING)}
-│ 😀 *➤ Auto React*: ${statusIcon(config.AUTO_REACT)}
-│ ❤️ *➤ Heart React*: ${statusIcon(config.HEART_REACT)}
-│ 👑 *➤ Owner React*: ${statusIcon(config.OWNER_REACT)}
-│ 🤖 *➤ Bot Name*: *${config.BOT_NAME}*
+│ 🟢 Auto Read Status : ${statusIcon(config.AUTO_READ_STATUS)}
+│ ⚙️ Mode            : *${config.MODE}*
+│ 🎙️ Auto Voice      : ${statusIcon(config.AUTO_VOICE)}
+│ 🖼️ Auto Sticker    : ${statusIcon(config.AUTO_STICKER)}
+│ 💬 Auto Reply      : ${statusIcon(config.AUTO_REPLY)}
+│ ✉️ Alive Message   : *${config.ALIVE_MSG}*
+│ 🔗 Anti Link       : ${statusIcon(config.ANTI_LINK)}
+│ 🚫 Anti Bad Words  : ${statusIcon(config.ANTI_BAD)}
+│ ⌨️ Prefix          : *[ ${config.PREFIX} ]*
+│ 🎥 Fake Recording  : ${statusIcon(config.FAKE_RECORDING)}
+│ 😀 Auto React      : ${statusIcon(config.AUTO_REACT)}
+│ ❤️ Heart React    : ${statusIcon(config.HEART_REACT)}
+│ 👑 Owner React    : ${statusIcon(config.OWNER_REACT)}
+│ 🤖 Bot Name       : *${config.BOT_NAME}*
 │
-╰──────────────────────────╯
+╰─────────────────────────────╯
 
-*🌟DEVELOPED BY Your Name🌟*
+⚡ *Developed by hhhisoka* ⚡
 `;
 
         // Send the settings message with the updated format

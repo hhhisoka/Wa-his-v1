@@ -1,3 +1,15 @@
+/**
+ * Copyright (C) 2025 hhhisoka
+ *
+ * This code is licensed under the GPL-3.0 LICENSE 
+ * See the LICENSE file in the repository root for full license text.
+ *
+ * Wa-his-v1 WhatsApp Bot
+ * Version: 1.0.0
+ * Created by hhhisoka
+ * GitHub: https://github.com/hhhisoka/Wa-his-v1
+ */
+
 const { cmd } = require('../command');
 
 cmd({

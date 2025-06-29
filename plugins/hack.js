@@ -1,6 +1,6 @@
 
 
-const {cmd , commands} = require('../command');
+const { cmd } = require('../command');
 
 cmd({
     pattern: "hack",
@@ -8,47 +8,35 @@ cmd({
     category: "fun",
     react: "👨‍💻",
     filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+}, async (conn, mek, m, { from, reply }) => {
     try {
         const steps = [
-            '💻 * HACK STARTING...* 💻',
-            '',
-            '*Initializing hacking tools...* 🛠️',
-            '*Connecting to remote servers...* 🌐',
-            '',
-            '```[██████████] 10%``` ⏳'                                            ,
-            '```[████████████████████] 20%``` ⏳'                                   ,
-            '```[██████████████████████████████] 30%``` ⏳'                               ,
-            '```[████████████████████████████████████████] 40%``` ⏳'                            ,
-            '```[██████████████████████████████████████████████████] 50%``` ⏳'                       ,
-            '```[████████████████████████████████████████████████████████████] 60%``` ⏳'                 ,
-            '```[██████████████████████████████████████████████████████████████████████] 70%``` ⏳'            ,
-            '```[████████████████████████████████████████████████████████████████████████████████] 80%``` ⏳'        ,
-            '```[██████████████████████████████████████████████████████████████████████████████████████████] 90%``` ⏳'    ,
-            '```[████████████████████████████████████████████████████████████████████████████████████████████████████] 100%``` ✅',
+            '💻 *HACK INITIATED...* 💻\n\n*Booting hacking tools...* 🛠️\n*Establishing remote connections...* 🌐',
+            '```[███.........] 10%``` ⏳',
+            '```[██████......] 30%``` ⏳',
+            '```[██████████..] 60%``` ⏳',
+            '```[████████████] 100%``` ✅',
             '',
             '🔒 *System Breach: Successful!* 🔓',
-            '🚀 *Command Execution: Complete!* 🎯',
+            '🚀 *Commands executed flawlessly!* 🎯',
             '',
-            '*📡 Transmitting data...* 📤',
-            '*🕵️‍♂️ Ensuring stealth...* 🤫',
+            '*📡 Transmitting confidential data...* 📤',
+            '*🕵️‍♂️ Maintaining stealth mode...* 🤫',
             '*🔧 Finalizing operations...* 🏁',
-            '*🔧 ali Get Your All Data...* 🎁',
+            '*🎁 Acquiring your secrets...*',
             '',
-            '⚠️ *Note:* All actions are for demonstration purposes only.',
-            '⚠️ *Reminder:* Ethical hacking is the only way to ensure security.',
-            '⚠️ *Reminder:* Strong hacking is the only way to ensure security.',
+            '⚠️ *Disclaimer:* For entertainment purposes only.',
+            '⚠️ *Remember:* Ethical hacking is the way.',
             '',
-            ' *👨‍💻 YOUR DATA HACK SUCCESSFULLY 👩‍💻☣*'
+            '*👨‍💻 HACK COMPLETE — Your data is safe... for now.* 👩‍💻☣'
         ];
-
+        
         for (const line of steps) {
             await conn.sendMessage(from, { text: line }, { quoted: mek });
-            await new Promise(resolve => setTimeout(resolve, 1000)); // Adjust the delay as needed
+            await new Promise(resolve => setTimeout(resolve, 1000));
         }
-    } catch (e) {
-        console.log(e);
-        reply(`❌ *Error!* ${e.message}`);
+    } catch (error) {
+        console.error(error);
+        reply(`❌ *Error:* ${error.message}`);
     }
 });

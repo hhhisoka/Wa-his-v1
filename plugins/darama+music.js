@@ -1,15 +1,14 @@
 /**
-
-
- Copyright (C) 2025.
- Licensed under the  GPL-3.0 License;
- You may not sell this script.
- It is supplied in the hope that it may be useful.
- * @project_name : Free Bot script
- * @author : Malvin King <https://github.com/kingmalvn>
- * @description : A Multi-functional whatsapp bot script.
- * @version 3.0.0
- **/
+ * Copyright (C) 2025 hhhisoka
+ *
+ * This code is licensed under the GPL-3.0 LICENSE 
+ * See the LICENSE file in the repository root for full license text.
+ *
+ * Wa-his-v1 WhatsApp Bot
+ * Version: 1.0.0
+ * Created by hhhisoka
+ * GitHub: https://github.com/hhhisoka/Wa-his-v1
+ */
 
 const {cmd , commands} = require('../command')
 const fg = require('api-dylux')
@@ -17,7 +16,7 @@ const yts = require('yt-search')
 cmd({
     pattern: "play2",
     desc: "To download songs.",
-    react: "🎵",
+    react: "🃏",
     category: "download",
     filename: __filename
 },
@@ -30,20 +29,23 @@ const url = data.url
     
     
 let desc = `
-*⦁ MUSⵊC DOWNLOADⵊNG ⦁*
+*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙋𝙄𝘾𝙆 — 𝙈𝙐𝙎𝙄𝘾 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 🎭*
 
-🎵 *MUSⵊC FOUND!* 
+🔎 *A delicious sound has been found...*  
 
-➥ *Title:* ${data.title} 
-➥ *Duration:* ${data.timestamp} 
-➥ *Views:* ${data.views} 
-➥ *Uploaded On:* ${data.ago} 
-➥ *Link:* ${data.url} 
+╭─❖
+│ 🎵 *Title:* ${data.title}  
+│ ⏳ *Duration:* ${data.timestamp}  
+│ 👁️ *Views:* ${data.views}  
+│ 🗓️ *Uploaded:* ${data.ago}  
+│ 🔗 *Link:* ${data.url}  
+╰─────────────★
 
-🎧 *ENJOY THE MUSIC BROUGHT TO YOU!*
+🎧 *Let the melody play... and maybe twist your soul a little.*  
 
+> _"Music is just another game... and I do love to play." – 𝙃𝙞𝙨𝙤𝙠𝙖_
 
-> *© Powered by your botname* 
+╰╴🎩 *Brought to you by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』... enjoy the thrill.* 
 `
 
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
@@ -82,20 +84,23 @@ const url = data.url
     
     
 let desc = `
-* ⦁ VⵊDEO DOWNLOADⵊNG ⦁ *
+*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙁𝙄𝙇𝙀𝙎 — 𝙑𝙄𝘿𝙀𝙊 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿 🎭*
 
-🎥 *VⵊDEO FOUND!* 
+🎥 *A twisted gem has been unearthed...*  
 
-➥ *Title:* ${data.title} 
-➥ *Duration:* ${data.timestamp} 
-➥ *Views:* ${data.views} 
-➥ *Uploaded On:* ${data.ago} 
-➥ *Link:* ${data.url} 
+╭─❖
+│ 🎞️ *Title:* ${data.title}  
+│ ⏳ *Duration:* ${data.timestamp}  
+│ 👁️ *Views:* ${data.views}  
+│ 📅 *Uploaded:* ${data.ago}  
+│ 🔗 *Link:* ${data.url}  
+╰─────────────★
 
-🎬 *ENJOY THE VIDEO BROUGHT TO YOU!*
+🎬 *Sit back, press play… and let it seduce your senses.*  
 
+> _"Every frame... a game. Every second... a trap." – 𝙃𝙞𝙨𝙤𝙠𝙖_
 
-> *© powered by your botname*
+╰╴🎩 *© Powered by your 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』... entertainment with a grin.* 
 `
 
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});

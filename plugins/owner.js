@@ -1,3 +1,16 @@
+/**
+ * Copyright (C) 2025 hhhisoka
+ *
+ * This code is licensed under the GPL-3.0 LICENSE 
+ * See the LICENSE file in the repository root for full license text.
+ *
+ * Wa-his-v1 WhatsApp Bot
+ * Version: 1.0.0
+ * Created by hhhisoka
+ * GitHub: https://github.com/hhhisoka/Wa-his-v1
+ */
+
+
 const axios = require('axios');
 const config = require('../config')
 const {cmd , commands} = require('../command')
@@ -17,18 +30,23 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 
-let dec = `*👋 Hello ${pushname}*
+let dec = `
+╭─❍ *『👋 𝗞𝗢𝗡𝗡𝗜𝗖𝗛𝗜𝗪𝗔 ${pushname}』* ❍─╮
 
-*👨‍💻Your Botname 👨‍💻*
+*『 👨‍💻 𝗕𝗢𝗧 𝗡𝗔𝗠𝗘 』:*  『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』
 
-> *𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢* 
+╰───────────────❍
 
-*⚡Owner name -: your name*
-*⚡Number* -: your number
+> *👑 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 👑*
 
- ⚡️◦ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3
+*✦ 𝗡𝗼𝗺 𝗱𝘂 𝗰𝗿é𝗮𝘁𝗲𝘂𝗿:* hhhisoka
+*✦ 𝗡𝘂𝗺é𝗿𝗼:* wa.me/2250104610403
 
-> *Powered by your name*
+*✦ 𝗖𝗵𝗮𝗶𝗻𝗲 𝗼𝗳𝗳𝗶𝗰𝗶𝗲𝗹𝗹𝗲:*  
+🔗� https://whatsapp.com/channel/0029Vb5u3VX0lwgllCdVTF0G
+
+───────────────
+🧠 *𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 hhhisoka*
 `;
 await conn.sendMessage(from,{image:{url:config.MENU_IMG},caption:dec},{quoted:mek});
 
@@ -49,16 +67,24 @@ cmd({
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 
-let dec = `*📍ℝ𝔼ℙ𝕆-𝕃𝕀ℕ𝕂 ❤️‍🔥👇*
+let dec = `
+*╭──❖ 『 🃏 𝙃𝙄𝙎𝙊𝙆𝘼 𝙈𝙊𝘿𝙀 : 𝙍𝙀𝙋𝙊 𝙎𝙃𝘼𝙍𝙀𝙍 』 ❖──╮*
 
-👨‍💻◦https://github.com/your github username/Botname
+*🔗 𝙍𝙀𝙋𝙊 𝙊𝙁 𝘿𝙀𝘼𝙏𝙃 💥*
 
+*📁 Github:*  
+> 👨‍💻 https://github.com/hhhisoka/Wa-his-v1
 
-*📍ℙ𝕃𝔼𝔸𝕊𝔼 𝔽𝕆𝕃𝕃𝕆𝕎 𝕄𝕐 𝕎ℍ𝔸𝕋𝕊𝔸ℙℙ ℂℍ𝔸ℕℕ𝔼𝕃 ❤️‍🔥👇*
+*📢 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 𝙊𝙁 𝙈𝘼𝘿𝙉𝙀𝙎𝙎 💫*
 
-👨‍💻◦ https://whatsapp.com/channel/0029Vac8SosLY6d7CAFndv3Z
+*🔗 WhatsApp Channel:*  
+> 👁️‍🗨️ https://whatsapp.com/channel/0029Vb5u3VX0lwgllCdVTF0G
 
-> *Powered by yourname*
+*╰───────⊹❖⊹───────╯*
+
+🩸 _"𝙇𝙖 𝙘𝙪𝙧𝙞𝙤𝙨𝙞𝙩é 𝙢𝙚 𝙙é𝙫𝙤𝙧𝙚… 𝙥𝙖𝙧𝙩𝙖𝙜𝙚 𝙖𝙫𝙖𝙣𝙩 𝙦𝙪𝙚 𝙟𝙚 𝙣𝙚 𝙩𝙚 𝙘𝙝𝙖𝙩𝙞𝙚…"_ 🃏
+
+> *🕸️ 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝙗𝙮 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 × hhhisoka*
 `;
 await conn.sendMessage(from,{image:{url: config.MENU_IMG},caption:dec},{quoted:mek});
 
@@ -76,15 +102,18 @@ cmd({
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-let status = `┌───────────────────────
-├ ⏰ *Runtime:-* ${runtime(process.uptime())}
-├ 📟 *Ram usage:-* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├ ⚙️ *Platform:-* ${os.hostname()}
-├ 👨‍💻 *Owners:-* your name
-├ 🧬 *Version:-* 1.0.0
-└───────────────────────
+let status = `
+╭─❖ 『 🧠 𝙎𝙔𝙎𝙏𝙀𝙈 𝙎𝙏𝘼𝙏𝙐𝙎 』 ❖─╮
 
-> *𝘗𝘖𝘞𝘌𝘙𝘌𝘋 𝘣𝘺 Your Botname*
+├ ⏰ *Runtime :* ${runtime(process.uptime())}
+├ 📟 *RAM Usage :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem() / 1024 / 1024)}MB
+├ ⚙️ *Platform :* ${os.hostname()}
+├ 👨‍💻 *Owner :* hhhisoka
+├ 🧬 *Version :* 1.0.0
+
+╰──────────────────────╯
+
+> *🔮 Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』*
 `;
 return reply(`${status}`)
   
