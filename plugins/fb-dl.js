@@ -42,7 +42,7 @@ cmd({
     // Send the video as an attachment
     await conn.sendMessage(from, {
   video: { url: sd }, // Attach the video
-  caption = `*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙁𝙄𝙉𝘿 — FB VIDEO DL 🎭*\n\n` +
+  caption: `*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙁𝙄𝙉𝘿 — FB VIDEO DL 🎭*\n\n` +
            `🔖 *Title:* ${title}\n` +
            `📜 *Description:* ${desc}\n` +
            `🔗 *URL:* ${fbUrl}\n\n` +
