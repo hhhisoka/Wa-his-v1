@@ -41,13 +41,14 @@ cmd({
 
     // Send the video as an attachment
     await conn.sendMessage(from, {
-      video: { url: sd }, // Attach the video
-    caption = `*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙁𝙄𝙉𝘿 — FB VIDEO DL 🎭*\n\n` +
-  `🔖 *Title:* ${title}\n` +
-  `📜 *Description:* ${desc}\n` +
-  `🔗 *URL:* ${fbUrl}\n\n` +
-  `> _"A glimpse into another world... Careful what you watch." – 𝙃𝙞𝙨𝙤𝙠𝙖_`;
-    });
+  video: { url: sd }, // Attach the video
+  caption = `*🎭 𝙃𝙄𝙎𝙊𝙆𝘼'𝙎 𝙁𝙄𝙉𝘿 — FB VIDEO DL 🎭*\n\n` +
+           `🔖 *Title:* ${title}\n` +
+           `📜 *Description:* ${desc}\n` +
+           `🔗 *URL:* ${fbUrl}\n\n` +
+           `> _"A glimpse into another world... Careful what you watch." – 𝙃𝙞𝙨𝙤𝙠𝙖_`
+});
+
   } catch (error) {
     console.error('Error downloading Facebook video:', error);
     reply('❌ Unable to download the Facebook video. Please try again later.');
