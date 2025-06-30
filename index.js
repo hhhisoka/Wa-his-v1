@@ -89,22 +89,25 @@ require("./plugins/" + plugin);
 }
 });
 console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
-console.log('LITE-MD CONNECTED TO WHATSAPP ENJOY ✅')
+console.log('『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 CONNECTED TO WHATSAPP ENJOY ✅')
 
-let up = `*╭──────────────●●►*
+let up = `*╭═══════༺🎭 𝙃𝙞𝙨𝙤𝙠𝙖-𝘽𝙊𝙏 ༻═══════╮*
 
-> ✅ *Wa-his-v1 connected successfully!*
-> 📜 *Type *.menu* to see all commands.*
-> 👤 *Created by:* _hhhisoka_
+💫 *『 Wa-his-v1 connecté avec succès ! 』*
+📖 Tape *${prefix}menu* pour révéler les secrets du bot…
 
-> 🔔 *Join our WhatsApp Channel for updates:*
-> https://whatsapp.com/channel/0029Vb5u3VX0lwgllCdVTF0G
+🃏 *Créateur :* _@hhhisoka_  
+🎪 *Style :* Chaotique, Magique et Dévastateur...
 
-> 🤖 *Your bot is now active. Enjoy the magic! ♥️🪄*
+📡 *Rejoins le Cirque des Ombres :*
+➤ https://whatsapp.com/channel/0029Vb5u3VX0lwgllCdVTF0G
 
-*🔹 Prefix:* ${prefix}
+❤️‍🔥 *Ton bot est vivant… amuse-toi, mais n’oublie jamais :*
+_"Le vrai plaisir est dans l'imprévu..."_ 🩸
 
-*╰──────────────●●►*`;
+*🧩 Préfixe mystique :* *${prefix}*
+
+*╰═══════༺🕸️ 𝙇𝙚 𝙟𝙚𝙪 𝙘𝙤𝙢𝙢𝙚𝙣𝙘𝙚... ༻═══════╯*`;
 conn.sendMessage(conn.user.id, {
   image: { url: config.MENU_IMG },
   caption: up
