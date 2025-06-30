@@ -48,29 +48,12 @@ const ownerNumber = ['2250104610403']
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
 if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
 const sessdata = config.SESSION_ID.replace("Wa-his-v1~", '');
-
-// Validate that sessdata contains a hash (format: fileId#hash)
-if (!sessdata.includes('#')) {
-    console.log('⚠️ Warning: SESSION_ID may not have proper format. Expected: Wa-his-v1~fileId#hash')
-    console.log('Attempting to proceed anyway...')
-}
-
-try {
-    const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-    filer.download((err, data) => {
-        if(err) {
-            console.log('❌ Failed to download session file:', err.message)
-            return
-        }
-        fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
-            console.log("SESSION DOWNLOADED COMPLETED ✅")
-        })
-    })
-} catch (error) {
-    console.log('❌ Error creating mega.nz file URL:', error.message)
-    console.log('Please check your SESSION_ID format. It should be: Wa-his-v1~fileId#hash')
-}
-}
+const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
+filer.download((err, data) => {
+if(err) throw err
+fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
+console.log("SESSION DOWNLOADED COMPLETED ✅")
+})})}
 
 const express = require("express");
 const app = express();
@@ -289,7 +272,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 command.on === "sticker" &&
 mek.type === "stickerMessage"
 ) {
-commmand.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
+command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 }});
 
 })
