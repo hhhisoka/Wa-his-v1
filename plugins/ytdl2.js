@@ -124,7 +124,7 @@ const yt = await ytsearch(q);
         document: { url: data.result.downloadUrl }, 
         mimetype: "audio/mpeg", 
         fileName: `${data.result.title}.mp3`, 
-        caption: `> *© Powered by your name 🎐*`
+        caption: `> *© Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 🎐-hhhisoka*`
     }, { quoted: mek });
 
 } catch (e) {
