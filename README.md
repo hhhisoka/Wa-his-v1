@@ -27,6 +27,10 @@
 ### 🚀 **Déploiement Instantané**
 
 - 🔧 **Replit** : [Déployer maintenant](https://replit.com/new/github/hhhisoka/Wa-his-v1)
+- 🚂 **Railway** : [Guide Railway](DEPLOYMENT_GUIDE.md#2-railway)
 - 📂 **Code Source** : [GitHub Repository](https://github.com/hhhisoka/Wa-his-v1)
-- 📖 **Documentation** : [Guide de déploiement](https://github.com/hhhisoka/Wa-his-v1/wiki)
-- 💡 **Alternatives** : Railway, Render, Heroku (configuration manuelle)
+- 📖 **Guide Complet** : [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+- 🔑 **SESSION_ID** : [Générateur](https://wa-his-session.onrender.com/)
+
+### 💡 **Plateformes Alternatives**
+Railway, Render, Heroku, Glitch, DigitalOcean - Voir le [guide détaillé](DEPLOYMENT_GUIDE.md)

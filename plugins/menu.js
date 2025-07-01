@@ -46,7 +46,7 @@ _🌟 *Réponds avec le numéro que tu veux explorer.*_
 
 > 🔮 *Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 × hhhisoka*
 `
-        await conn.sendMessage(from, { image: { url: config.MENU_IMG}, caption: desc }, { quoted: mek });
+        const sentMsg = await conn.sendMessage(from, { image: { url: config.MENU_IMG}, caption: desc }, { quoted: mek });
 
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
@@ -54,7 +54,7 @@ _🌟 *Réponds avec le numéro que tu veux explorer.*_
 
             const selectedOption = msg.message.extendedTextMessage.text.trim();
 
-            if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === vv.key.id) {
+            if (msg.message.extendedTextMessage.contextInfo && msg.message.extendedTextMessage.contextInfo.stanzaId === sentMsg.key.id) {
                 switch (selectedOption) {
                     case '1':
                     reply(`
