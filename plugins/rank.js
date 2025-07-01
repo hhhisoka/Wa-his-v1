@@ -53,7 +53,7 @@ cmd({
         const progressPercent = Math.floor(((userData.experience - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100);
         const progressBar = "🌕".repeat(progressPercent / 10) + "🌑".repeat(10 - progressPercent / 10);
 
-        const levelImageURL = "https://files.catbox.moe/yfeca5.jpg";
+        const levelImageURL = "https://files.catbox.moe/jr7hl0.jpg";
 
         const caption = `
 🧬 *『 𝙋𝙍𝙊𝙁𝙄𝙇 𝘿𝙀 𝙍𝘼𝙉𝙂 』*
