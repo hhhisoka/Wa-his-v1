@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# ⚔️ Wa-his-v1 - Bot WhatsApp MD ⚔️
+# ⚔️ Wa-his-v1  WhatsApp MD ⚔️
 
 <img src="https://files.catbox.moe/jr7hl0.jpg" alt="Wa-his-v1 Logo" width="300">
 
