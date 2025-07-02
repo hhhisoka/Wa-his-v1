@@ -1,0 +1,42 @@
+# Utilisez une image Node.js officielle
+FROM node:18-alpine
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Installer les dépendances système nécessaires
+RUN apk add --no-cache \
+chromium \
+nss \
+freetype \
+freetype-dev \
+harfbuzz \
+ca-certificates \
+ttf-freefont \
+python3 \
+make \
+g++
+
+# Copier package.json et package-lock.json
+COPY package*.json ./
+
+# Installer les dépendances Node.js
+RUN npm ci --only=production && npm cache clean --force
+
+# Copier le reste du code
+COPY . .
+
+# Créer les dossiers nécessaires avec les bonnes permissions
+RUN mkdir -p /app/sessions /app/data /app/temp && \
+chmod -R 755 /app
+
+# Définir les variables d'environnement pour Puppeteer
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser \
+NODE_ENV=production
+
+# Exposer le port (ajustez selon votre configuration)
+EXPOSE 3000
+
+# Commande de démarrage
+CMD ["node", "index.js"]
