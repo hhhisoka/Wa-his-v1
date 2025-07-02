@@ -157,14 +157,14 @@ _🌟 *Réponds avec le numéro que tu veux explorer.*_
 `);
                     break;
                     case '5':               
-              reply(`
-
+  reply(`
 ╔═══════════════════════╗  
 ║ 👨‍💻 *『 𝗢𝗪𝗡𝗘𝗥 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 』* 👨‍💻  
 ╚═══════════════════════╝  
 
 ╭───〔 🍿 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 〕───╮  
 │ ◈ .shutdown  
+│ ◈ .restart  
 │ ◈ .alive  
 │ ◈ .ping  
 │ ◈ .clearchats  
@@ -173,9 +173,18 @@ _🌟 *Réponds avec le numéro que tu veux explorer.*_
 │ ◈ .repo  
 │ ◈ .owner  
 │ ◈ .owner2  
+│ ◈ .setconfig  
+│ ◈ .getconfig  
+│ ◈ .resetconfig  
+│ ◈ .saveconfig  
+│ ◈ .leave  
+│ ◈ .jid  
+│ ◈ .system  
+│ ◈ .broadcast  
+│ ◈ .setpp  
 ╰─────────────────────╯  
 
-📊 *Total OWNER Commands:* 9  
+📊 *Total OWNER Commands:* 19  
 
 > 🔮 *Powered by 『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』 × hhhisoka*
 `);
