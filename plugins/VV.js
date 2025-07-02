@@ -1,5 +1,5 @@
 const { cmd } = require('../command')
-const { downloadMediaMessage } = require('../lib/msg')
+const { getMessageType, isViewOnce, extractViewOnceContent, formatError } = require('../lib/functions')
 
 cmd({
     pattern: "viewonce",
@@ -15,41 +15,37 @@ try {
     
     const quotedMsg = m.quoted
     
-    // Vérification plus robuste pour view once
-    if (!quotedMsg.viewOnce && !quotedMsg.message?.viewOnceMessage) {
+    if (!isViewOnce(quotedMsg.message)) {
         return reply("*❌ This is not a view once message!*")
     }
     
-    let mediaMsg;
-    if (quotedMsg.message?.viewOnceMessage) {
-        mediaMsg = quotedMsg.message.viewOnceMessage.message
-    } else {
-        mediaMsg = quotedMsg.message
+    const viewOnceContent = extractViewOnceContent(quotedMsg.message)
+    
+    if (!viewOnceContent) {
+        return reply("*❌ Could not extract view once content!*")
     }
     
-    const messageType = Object.keys(mediaMsg)[0]
-    
-    if (messageType === 'imageMessage') {
+    if (viewOnceContent.type === 'imageMessage') {
         const buffer = await quotedMsg.download()
         
         await conn.sendMessage(from, {
             image: buffer,
-            caption: `*👁️ View Once Image Saved*\n\n${mediaMsg.imageMessage.caption || ''}`
+            caption: `*👁️ View Once Image Saved*\n\n${viewOnceContent.caption}`
         }, { quoted: mek })
         
-    } else if (messageType === 'videoMessage') {
+    } else if (viewOnceContent.type === 'videoMessage') {
         const buffer = await quotedMsg.download()
         
         await conn.sendMessage(from, {
             video: buffer,
-            caption: `*👁️ View Once Video Saved*\n\n${mediaMsg.videoMessage.caption || ''}`
+            caption: `*👁️ View Once Video Saved*\n\n${viewOnceContent.caption}`
         }, { quoted: mek })
     } else {
-        reply("*❌ Unsupported view once message type!*")
+        reply(`*❌ Unsupported view once type: ${viewOnceContent.type}*`)
     }
     
 } catch (e) {
     console.log("ViewOnce Error:", e)
-    reply(`❌ *Error downloading view once: ${e.message}*`)
+    reply(`❌ *Error: ${formatError(e)}*`)
 }
 })
