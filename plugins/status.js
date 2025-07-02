@@ -1,43 +1,52 @@
 const { cmd } = require('../command')
-const { downloadMediaMessage } = require('../lib/msg')
 
 cmd({
     pattern: "getstatus",
     react: "📱",
-    alias: ["status", "downloadstatus"],
+    alias: ["status", "savestatus"],
     desc: "Download status updates",
     category: "download",
     filename: __filename
 },
-async(conn, mek, m, {from, quoted, reply}) => {
+async(conn, mek, m, {from, reply}) => {
 try {
-    if (!quoted) return reply("*Reply to a status message!*")
+    if (!m.quoted) return reply("*❌ Reply to a status message!*")
     
-    // Vérifier si c'est un message de status
-    if (!mek.key.remoteJid.includes('status@broadcast')) {
-        return reply("*This is not a status message!*")
+    const quotedMsg = m.quoted
+    
+    // Vérification pour status
+    if (!quotedMsg.key?.remoteJid?.includes('status@broadcast')) {
+        return reply("*❌ This is not a status message!*")
     }
     
-    const messageType = Object.keys(quoted.message)[0]
+    const messageType = quotedMsg.mtype || Object.keys(quotedMsg.message || {})[0]
     
-    if (messageType === 'imageMessage') {
-        const media = await downloadMediaMessage(quoted, 'buffer')
+    if (messageType === 'imageMessage' || quotedMsg.imageMessage) {
+        const buffer = await quotedMsg.download()
+        
         await conn.sendMessage(from, {
-            image: media,
-            caption: quoted.message.imageMessage.caption || "*Status Image Downloaded*"
+            image: buffer,
+            caption: `*📱 Status Image Saved*\n\n${quotedMsg.imageMessage?.caption || quotedMsg.caption || ''}`
         }, { quoted: mek })
-    } else if (messageType === 'videoMessage') {
-        const media = await downloadMediaMessage(quoted, 'buffer')
+        
+    } else if (messageType === 'videoMessage' || quotedMsg.videoMessage) {
+        const buffer = await quotedMsg.download()
+        
         await conn.sendMessage(from, {
-            video: media,
-            caption: quoted.message.videoMessage.caption || "*Status Video Downloaded*"
+            video: buffer,
+            caption: `*📱 Status Video Saved*\n\n${quotedMsg.videoMessage?.caption || quotedMsg.caption || ''}`
         }, { quoted: mek })
-    } else if (messageType === 'extendedTextMessage') {
-        reply(`*Status Text:*\n${quoted.message.extendedTextMessage.text}`)
+        
+    } else if (messageType === 'conversation' || quotedMsg.text) {
+        const statusText = quotedMsg.text || quotedMsg.conversation || quotedMsg.message?.conversation
+        reply(`*📱 Status Text Saved:*\n\n${statusText}`)
+        
+    } else {
+        reply(`*❌ Unsupported status type: ${messageType}*`)
     }
     
 } catch (e) {
-    console.log(e)
-    reply(`❌ *Error: ${e.message}*`)
+    console.log("Status Error:", e)
+    reply(`❌ *Error downloading status: ${e.message}*`)
 }
 })
