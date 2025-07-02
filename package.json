@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A WhatsApp Bot Created By hhhisoka",
   "main": "index.js",
-  "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Wa-his-v1",
-    "stop": "pm2 stop Wa-his-v1",
-    "restart": "pm2 restart Wa-his-v1"
-  },
+"scripts": {
+  "start": "node index.js",
+  "dev": "pm2 start index.js --deep-monitoring --name Wa-his-v1 --no-daemon",
+  "stop": "pm2 stop Wa-his-v1",
+  "restart": "pm2 restart Wa-his-v1"
+},
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
