@@ -40,4 +40,17 @@ OWNER_REACT: process.env.OWNER_REACT || "false",
 BOT_NAME: process.env.BOT_NAME || "『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』",
 OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
 STICKER_DATA: process.env.STICKER_DATA || "『𝙒𝘼・𝙃𝙄𝙎・𝙑𝟭』",
+
+AUTO_DOWNLOAD: process.env.AUTO_DOWNLOAD || false,
+
+AUTO_READ_STATUS: process.env.AUTO_READ_STATUS || true,
+
+AUTO_DOWNLOAD: process.env.AUTO_DOWNLOAD || false,
+  DOWNLOAD_KEYWORDS: ["save", "download", "dl", "télécharge", "sauve","send"],
+  DOWNLOAD_IMAGES: process.env.DOWNLOAD_IMAGES || true,
+  DOWNLOAD_VIDEOS: process.env.DOWNLOAD_VIDEOS || true,
+  DOWNLOAD_AUDIO: process.env.DOWNLOAD_AUDIO || true,
+  MAX_FILE_SIZE: process.env.MAX_FILE_SIZE ||  50, // MB
+  NOTIFY_DOWNLOAD: process.env.NOTIFY_DOWNLOAD || true,
+  SAVE_SENDER_INFO: process.env.SAVE_SENDER_INFO || true,
 };
